@@ -17,24 +17,18 @@ if (classGroup == "Science") {
 
 // Question 5
 
-let pwr = 0;
-let num = 5;
-let i = 0;
-while (pwr <= num) {
-  pwr = 2 ** i;
-  i++;
-  if (pwr > num) {
-    break;
-  }
-  console.log(pwr);
+let num = 40;
+let powerOf2 = 1;
+while (powerOf2 < num) {
+  powerOf2 *= 2;
 }
-console.log(pwr);
+let pwr;
+if (num < 0) {
+  console.log("Positive numbers only");
+} else if (Math.abs(num - powerOf2) < Math.abs(num - powerOf2 / 2)) {
+  pwr = powerOf2;
+} else {
+  pwr = powerOf2 / 2;
+}
 
-// let result = 0;
-// let num = 5;
-// let i = 0;
-// while (result < num) {
-//   result = 2 ** i;
-//   i++;
-// }
-// console.log(result);
+console.log(`The number ${pwr} is the power of 2 nearest to ${num}`);
